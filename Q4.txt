@@ -1,0 +1,53 @@
+RATP Metro Route Finder Documentation
+Overview
+This project implements a metro route finding algorithm that calculates the shortest path between metro stations using a graph representation of the metro network.
+Code Structure
+main.c: Contains the main logic for route finding.
+graph.c: Functions for managing the graph structure.
+graph.h: Header file for graph.c.
+utils.c / utils.h: Utility functions and helpers.
+Functions
+int main(int argc, char *argv[])
+Purpose: The entry point of the program. It reads input, initializes the graph, and finds the shortest path.
+Parameters:
+argc: The number of command-line arguments.
+argv: Array of command-line arguments.
+Returns:
+int: Returns 0 on successful execution.
+Description:
+Parses command-line arguments to read input files or data.
+Initializes the graph with metro stations and connections.
+Calls the find_route function to compute the shortest path.
+Outputs the results to the console.
+void find_route(Graph *graph, int start_station, int end_station)
+Purpose: Finds the shortest path between start_station and end_station in the metro network.
+Parameters:
+graph: Pointer to the graph structure representing the metro network.
+start_station: The starting station for the route.
+end_station: The destination station for the route.
+Returns:
+void
+Description:
+Uses a shortest path algorithm (e.g., Dijkstra’s) to compute the path.
+Updates and prints the shortest path and distance.
+Graph* initialize_graph(const char *filename)
+Purpose: Initializes the graph from a file.
+Parameters:
+filename: The name of the file containing graph data.
+Returns:
+Graph*: A pointer to the initialized graph structure.
+Description:
+Reads the graph data from the specified file.
+Allocates memory and sets up the graph structure with stations and connections.
+void print_route(Graph *graph, int *path, int path_length)
+Purpose: Prints the computed route from start to end.
+Parameters:
+graph: Pointer to the graph structure.
+path: Array representing the shortest path.
+path_length: The length of the path array.
+Returns:
+void
+Description:
+Outputs the stations and total distance of the shortest path to the console.
+
+
